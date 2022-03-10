@@ -9,7 +9,7 @@ import GlobalHeader from "@/components/GlobalHeader.vue";
 
 export default {
   name: "App",
-  components: { GlobHeader },
+  components: { GlobalHeader },
 };
 </script>
 
