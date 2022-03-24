@@ -1,43 +1,27 @@
 <template>
-  <div id="app" class="gridLayout">
+  <div id="app">
     <global-header></global-header>
+    <v-img :src="eStandImgPass"></v-img>
+    <router-view />
   </div>
 </template>
 
 <script>
 import GlobalHeader from "@/components/GlobalHeader.vue";
+import eStandImgPass from "@/assets/seeds-4810524__480.jpeg";
 
 export default {
   name: "App",
   components: { GlobalHeader },
+  data: () => ({ eStandImgPass: "" }),
+  mounted: function () {
+    this.eStandImgPass = eStandImgPass;
+  },
 };
 </script>
 
 <style scoped>
-.gridLayout {
-  display: grid;
-  width: 600px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 50px;
-}
-.link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-column: 1 / span 2;
-  color: blue;
-}
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-column: 1 / span 2;
-  text-align: center;
-  color: green;
+* {
+  font-family: 游ゴシック !important;
 }
 </style>
