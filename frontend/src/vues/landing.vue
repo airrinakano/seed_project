@@ -1,18 +1,14 @@
 <template>
- <p>こんにちは</p>
+  <p>こんにちは</p>
 </template>
 
 <script>
-
-
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Landing,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

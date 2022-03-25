@@ -19,9 +19,6 @@
         いつでも自然と繋がれる</span
       >
     </div>
-    <v-img src="@/assets/seeds-4810524__480.jpeg"></v-img>
-    <v-img src="@/assets/seeds-4810524__480.jpeg"></v-img>
-    <v-img src="@/assets/seeds-4810524__480.jpeg"></v-img>
   </v-app>
 </template>
 

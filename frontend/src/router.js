@@ -1,16 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import landing from "./views/landing";
+import Landing from "./views/landing";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "landing",
+    path: "/landing",
+    name: "Landing",
     // この場合、App.vueで配置した名前なしのrouter-viewのみ切り替わります。
-    component: landing,
+    component: Landing,
   },
 ];
 
