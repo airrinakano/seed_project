@@ -15,30 +15,31 @@ services:
     volumes:
       - ./mysql/initdb:/docker-entrypoint-initdb.d
       - mysql_db:/var/lib/mysql
-  backend:
-    container_name: backend
-    build:
-      context: .
-      dockerfile: ./docker/spring/Dockerfile
-    depends_on:
-      - mysql
-    ports:
-      - "8080:8080"
-    tty: true
-    volumes:
-      - ../spring_project:/srv:cached
-    working_dir: /srv
-  frontend:
-    container_name: frontend
-    build:
-      context: .
-      dockerfile: ./docker/vue/Dockerfile
-    ports:
-      - 9000:8080
-    volumes:
-      - ../vue_project:/usr/src/app:cached
-    stdin_open: true
-    tty: true
+    user: root # 一旦rootで入る
+#   backend:
+#     container_name: backend
+#     build:
+#       context: .
+#       dockerfile: ./docker/spring/Dockerfile
+#     depends_on:
+#       - mysql
+#     ports:
+#       - "8080:8080"
+#     tty: true
+#     volumes:
+#       - ../spring_project:/srv:cached
+#     working_dir: /srv
+#   frontend:
+#     container_name: frontend
+#     build:
+#       context: .
+#       dockerfile: ./docker/vue/Dockerfile
+#     ports:
+#       - 9000:8080
+#     volumes:
+#       - ../vue_project:/usr/src/app:cached
+#     stdin_open: true
+#     tty: true
 volumes:
   mysql_db:
     driver: local
