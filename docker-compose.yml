@@ -2,7 +2,9 @@ version: '3.6'
 services:
   mysql:
     container_name: mysql
-    build: ./docker/mysql/Dockerfile
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
     environment:
       MYSQL_DATABASE: mysqldb
       MYSQL_USER: user
@@ -15,7 +17,9 @@ services:
       - mysql_db:/var/lib/mysql
   backend:
     container_name: backend
-    build: ./docker/spring/Dockerfile
+    build:
+      context: .
+      dockerfile: ./docker/spring/Dockerfile
     depends_on:
       - mysql
     ports:
@@ -26,7 +30,9 @@ services:
     working_dir: /srv
   frontend:
     container_name: frontend
-    build: ./docker/vue/Dockerfile
+    build:
+      context: .
+      dockerfile: ./docker/vue/Dockerfile
     ports:
       - 9000:8080
     volumes:
