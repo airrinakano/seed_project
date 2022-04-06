@@ -1,16 +1,10 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <about />
-  </div>
+  <v-app id="inspire"> aaabbbbbb</v-app>
 </template>
+
 <script>
-import About from "../components/About.vue";
 export default {
-  name: "AboutView",
-  components: {
-    About,
-  },
+  name: "About",
   props: {},
   methods: {},
   data: () => ({}),
