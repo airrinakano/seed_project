@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <div>
     <header class="header" :class="{ sticky: position > 0 }" :color="bg">
       <v-spacer></v-spacer>
       <v-row no-gutters>
@@ -19,7 +19,7 @@
         いつでも自然と繋がれる</span
       >
     </div>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -42,20 +42,7 @@ export default {
     },
   },
   data: () => ({ bg: "", eStandImgPass: "" }),
-  computed: {
-    height: function () {
-      if (
-        document.body.scrollTop > 100 ||
-        document.documentElement.scrollTop > 100
-      ) {
-        return "200px";
-      } else if (!this.$vuetify.breakpoint.xs || !this.$vuetify.breakpoint.xs) {
-        return "140px";
-      } else {
-        return "90px";
-      }
-    },
-  },
+  computed: {},
   mounted() {
     window.onscroll = () => {
       this.changeColor();
@@ -71,7 +58,6 @@ export default {
 
 <style scoped>
 .banner {
-  position: absolute;
   top: 0;
   z-index: 1;
   width: 100%;
@@ -119,5 +105,8 @@ header {
   z-index: 1000000000;
   width: 100%;
   color: white;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 }
 </style>
