@@ -19,9 +19,6 @@
         いつでも自然と繋がれる</span
       >
     </div>
-    <v-img src="@/assets/seeds-4810524__480.jpeg"></v-img>
-    <v-img src="@/assets/seeds-4810524__480.jpeg"></v-img>
-    <v-img src="@/assets/seeds-4810524__480.jpeg"></v-img>
   </v-app>
 </template>
 
@@ -118,6 +115,7 @@ header {
 .sub-title {
   position: absolute;
   top: 30rem;
+  left: 56%;
   z-index: 1000000000;
   width: 100%;
   color: white;
