@@ -1,8 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <about />
-    <item />
+    <about class="about-content" />
+    <item class="item-content" />
   </div>
 </template>
 <script>
@@ -22,4 +21,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.about-content,
+.item-content {
+  margin-top: 100px;
+}
+</style>

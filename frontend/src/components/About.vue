@@ -54,6 +54,7 @@ p {
 .phote {
   flex-basis: 45%;
   width: 40%;
+  margin-left: 100px;
 }
 .about-btn {
   margin-top: 40px;

@@ -11,13 +11,19 @@
         <v-col> ITEMS</v-col>
       </v-row>
     </header>
-    <v-img class="banner" src="@/assets/seeds-4810524__480.jpeg"></v-img>
+    <v-img class="banner" src="@/assets/seedlings-4933589_1280.jpeg"></v-img>
+    <div class="scrolldown1"><span>Scroll</span></div>
     <div class="sub-title">
-      <h2>心地の良い、遊べる菜園</h2>
-      <span
-        >都心の小さなスペースを大自然に変え <br />
-        いつでも自然と繋がれる</span
-      >
+      <h1>すべての命は種から始まる</h1>
+      <h2>
+        種をつけるのは、植物として当たり前の生命活動。<br />
+        種は、植物自身が命のリレーをしてつないできたものです。<br />
+        農家が育てた野菜から自分で種を採ること。<br />
+        そして採った種で次の野菜を作ること。<br />
+        農家は一番元気で子孫を残していくのに相応しい野菜を選び、<br />
+        その土地と環境、そして自分の栽培方法に合った品種を育てて行きます。<br />
+        自家採種を何度も繰り返すうちに個性のある品種が生まれてきます。<br />
+      </h2>
     </div>
   </div>
 </template>
@@ -99,12 +105,71 @@ header {
   background: black;
 }
 .sub-title {
+  line-height: 2.5;
   position: absolute;
-  top: 30rem;
-  left: 56%;
+  top: 30%;
+  left: 25%;
   z-index: 1000000000;
   width: 100%;
   color: white;
+}
+
+/*====== 9-1-1 縦線が動いてスクロールを促す =======*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown1 {
+  z-index: 2;
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  /*全体の高さ*/
+  height: 50px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown1 span {
+  /*描画位置*/
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  /*テキストの形状*/
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown1::after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  top: 0;
+  /*線の形状*/
+  width: 1px;
+  height: 300px;
+  background: #eee;
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
