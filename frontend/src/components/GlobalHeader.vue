@@ -3,12 +3,24 @@
     <header class="header" :class="{ sticky: position > 0 }" :color="bg">
       <v-spacer></v-spacer>
       <v-row no-gutters>
-        <v-col> about</v-col>
-        <v-col> CONCEPT</v-col>
-        <v-col> ITEMS</v-col>
-        <v-col> about</v-col>
-        <v-col> CONCEPT</v-col>
-        <v-col> ITEMS</v-col>
+        <v-col
+          ><router-link to="/demo" target="_blank"> about </router-link></v-col
+        >
+        <v-col>
+          <router-link to="/demo" target="_blank">CONCEPT</router-link></v-col
+        >
+        <v-col
+          ><router-link to="/demo" target="_blank"> ITEMS</router-link></v-col
+        >
+        <v-col>
+          <router-link to="/demo" target="_blank">about</router-link></v-col
+        >
+        <v-col>
+          <router-link to="/demo" target="_blank">CONCEPT</router-link></v-col
+        >
+        <v-col>
+          <router-link to="/demo" target="_blank">ITEMS</router-link></v-col
+        >
       </v-row>
     </header>
     <v-img class="banner" src="@/assets/seedlings-4933589_1280.jpeg"></v-img>
@@ -75,10 +87,7 @@ header {
   width: 100%;
   color: #888;
   background: white;
-  text-shadow: 0px 1px 2px #777;
-  color: white;
   height: 1rem;
-  line-height: 10rem;
   transition: all 0.3s ease;
 }
 .sticky {
@@ -112,6 +121,36 @@ header {
   z-index: 1000000000;
   width: 100%;
   color: white;
+}
+
+.col {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  position: relative;
+  text-shadow: 0px 1px 2px #777;
+  line-height: 4rem;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+}
+a::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+a:hover::after {
+  bottom: -4px;
+  opacity: 1;
+  visibility: visible;
 }
 
 /*====== 9-1-1 縦線が動いてスクロールを促す =======*/

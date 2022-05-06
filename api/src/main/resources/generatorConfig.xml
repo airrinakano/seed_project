@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="mysqldb" targetRuntime="MyBatis3">
+
+        <!-- モデルクラスにSerializableインターフェースを追加 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <!-- * XMLをマージしない(mybatis-generator-pluginのoverwrite設定も参考のこと) -->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>
+
+        <!-- エンティティクラスでLombokを使用するためのプラグイン -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.LombokPlugin">
+            <property name="@Data" value="true"/>
+            <property name="@Builder" value="false"/>
+            <property name="@AllArgsConstructor" value="true"/>
+            <property name="@NoArgsConstructor" value="true"/>
+            <property name="@Accessors(chain = true)" value="false"/>
+            <property name="supportSuperBuilderForIdea" value="false"/>
+        </plugin>
+
+        <!-- マッパクラスのアノテーションを制御するためのプラグイン -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.MapperAnnotationPlugin">
+            <property name="@Mapper" value="true"/>
+        </plugin>
+
+        <!-- 生成される Java ファイルのコメントに日付を付与しない -->
+        <commentGenerator>
+            <!-- trueの場合、生成された要素にコメントは追加されない。
+            TODO 自動生成される中で、必要なコメントはないのか-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 生成元となるDBへの接続情報 -->
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/mysqldb"
+                        driverClass="com.mysql.cj.jdbc.Driver"
+                        password="password" userId="user"/>
+
+        <!-- MyBatis Generatorの設定 -->
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.example.api.domain" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.example.api.mapper" targetProject="src/main/resources"/>
+        <javaClientGenerator targetPackage="com.example.api.mapper" targetProject="src/main/java"
+                             type="MIXEDMAPPER"/>
+
+        <!-- 生成対象とするテーブルを記述する -->
+
+        <table schema="mysqldb" tableName="m_%" enableInsert="true"
+               enableSelectByPrimaryKey="true" enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true" enableUpdateByExample="false"
+               enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+               enableCountByExample="false" selectByExampleQueryId="false">
+        </table>
+
+    </context>
+</generatorConfiguration>

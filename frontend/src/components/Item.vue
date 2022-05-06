@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>Items</h2>
+    <p>商品一覧</p>
     <div class="supplier">
       <div class="item">
         <img src="@/assets/images (1).jpeg" alt="" /><span>ひまわりの種</span>
@@ -61,7 +62,8 @@ export default {
   gap: 10px 41px;
   margin: 55px;
 }
-h2 {
+h2,
+p {
   text-align: center;
 }
 .item {
