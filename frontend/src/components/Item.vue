@@ -13,31 +13,31 @@
         <img src="@/assets/images (3).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (4).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (5).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (6).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (7).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (8).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (9).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (10).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (11).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
-        <img src="@/assets/images (12).jpeg" alt="" /><span>ひまわりの種</span>
+        <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
     </div>
   </div>
@@ -72,6 +72,9 @@ p {
   width: 300px;
   span {
     text-align: center;
+    // font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 }
 </style>

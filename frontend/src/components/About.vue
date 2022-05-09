@@ -47,6 +47,8 @@ export default {
   text-align: center;
 }
 p {
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-align: left;
   display: inline-block;
   margin-top: 30px;

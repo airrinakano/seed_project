@@ -1,32 +1,106 @@
 <template>
-  <v-footer dark padless>
-    <v-card flat tile class="indigo lighten-1 white--text text-center">
-      <v-card-text>
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
-        </v-btn>
-      </v-card-text>
+  <div class="footer--center">
+    <ul class="footer__navigation list--reset">
+      <li>
+        <a
+          href="/"
+          class="footer__nav-link mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">TOP</span>
+        </a>
+      </li>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-        Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-        accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a
-        sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
-        lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
-        iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor
-        vel ut orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      </v-card-text>
+      <li>
+        <a
+          href="/pages/concept"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">コンセプト</span>
+        </a>
+      </li>
 
-      <v-divider></v-divider>
+      <li>
+        <a
+          href="/blogs/magazine"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">記事一覧</span>
+        </a>
+      </li>
 
-      <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text>
-    </v-card>
-  </v-footer>
+      <li>
+        <a
+          href="/collections/all"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">商品一覧</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/pages/guide"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">ご利用ガイド</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/pages/faq"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">よくある質問</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/pages/contact"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">お問い合わせ</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/pages/privacy-policy"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">プライバシーポリシー</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/pages/law"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">取引規定</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/pages/regulation"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">特定商取引に基づく表記</span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/pages/rule"
+          class="footer__nav-link inline-block mobile-nav__link color--primary-text"
+        >
+          <span class="footer__nav-link-span">利用規約</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -41,6 +115,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.list--reset {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer--center {
+  width: 650px;
+  margin: 50px auto;
+}
+li {
+  width: 210px;
+  margin-top: 12px;
+}
+.footer__nav-link-span {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #000;
+}
+a {
+  text-decoration: none;
+}
+
+a::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+a:hover::after {
+  bottom: 0px;
+  opacity: 1;
+  color: black;
+  visibility: visible;
+}
+
+.footer__nav-link-span:after {
+  content: ">";
+  right: 0;
+  top: -4px;
+}
+
 .about-phote {
   display: inline-block;
   width: 100%;
