@@ -102,11 +102,7 @@ export default {
      * @type {String}
      */
     alertMessage: "",
-    /**
-     * E-standのロゴ画像のパス
-     * @type {String}
-     */
-    eStandImgPass: "",
+
     /**
      * 入力されたID
      * @type {String}
@@ -127,9 +123,7 @@ export default {
   }),
   mixins: [messageMixin],
   created: function () {},
-  mounted: function () {
-    this.eStandImgPass = eStandImgPass;
-  },
+
   methods: {
     /**
      * Eメールのバリデーションチェック
@@ -203,6 +197,17 @@ export default {
         email: this.idInputed,
         password: this.passwordInputed,
       };
+      console.log(loginParam);
+
+      await this.axios
+        .post("/api/login", loginParam)
+        .then(async (response) => {
+          console.log("入った");
+        })
+        .catch((e) => {})
+        .finally(() => {
+          this.loading = false;
+        });
     },
   },
 };

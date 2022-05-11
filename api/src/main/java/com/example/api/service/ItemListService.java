@@ -1,4 +1,4 @@
-package com.example.spring_project.service;
+package com.example.api.service;
 
 import com.example.api.dto.ItemDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,4 +17,4 @@ public class ItemListService {
             return new ArrayList<ItemDto>();
         }
     }
-}
+

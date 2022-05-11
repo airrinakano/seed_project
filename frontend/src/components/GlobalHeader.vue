@@ -16,10 +16,12 @@
           <router-link to="/login" target="_blank"> LOGIN</router-link></v-col
         >
         <v-col>
-          <router-link to="/demo" target="_blank"> CONTACT</router-link></v-col
+          <router-link to="/contact" target="_blank">
+            CONTACT</router-link
+          ></v-col
         >
         <v-col>
-          <router-link to="/demo" target="_blank"> CART</router-link></v-col
+          <router-link to="/cart" target="_blank"> CART</router-link></v-col
         >
       </v-row>
     </header>
