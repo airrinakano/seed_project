@@ -19,7 +19,9 @@ export default {
 
 <style scoped>
 * {
-  font-family: 游ゴシック !important;
+  font-family: \6e38\30b4\30b7\30c3\30af\4f53, YuGothic,
+    \6e38\30b4\30b7\30c3\30af Medium, Yu Gothic Medium,
+    \6e38\30b4\30b7\30c3\30af, Yu Gothic, sans-serif;
 }
 .v-application--wrap {
   min-height: unset;

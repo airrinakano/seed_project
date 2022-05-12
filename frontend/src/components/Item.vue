@@ -6,7 +6,7 @@
       <div class="item">
         <img src="@/assets/images (1).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
-      <div class="item">
+      <div class="item" @click="moveToDetail(2)">
         <img src="@/assets/images (2).jpeg" alt="" /><span>ひまわりの種</span>
       </div>
       <div class="item">
@@ -47,7 +47,16 @@
 export default {
   name: "Item",
   props: {},
-  methods: {},
+  methods: {
+    moveToDetail: async function (orderId) {
+      this.$router.push({
+        name: "ItemDetail",
+        params: {
+          orderId: orderId,
+        },
+      });
+    },
+  },
   data: () => ({}),
   computed: {},
   mounted() {},
@@ -75,6 +84,9 @@ p {
     // font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.05em;
+  }
+  img:hover {
+    opacity: 0.7;
   }
 }
 </style>
