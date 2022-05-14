@@ -9,15 +9,15 @@
       </div>
     </div>
     <div class="item-description">
-      <h1>エダマメの種 スターターセット</h1>
-      <p>¥3,300</p>
+      <h1>{{ title }}</h1>
+      <p>¥{{ unitPrice }}</p>
       <p>個数</p>
       <number-input-spinner
         :min="0"
         :max="100"
         :step="1"
         :integer-only="true"
-        v-model="yourVModel"
+        v-model="number"
       ></number-input-spinner>
       <v-divider></v-divider>
       <v-btn @click="goToCart">カートに追加する</v-btn>
@@ -33,6 +33,12 @@ export default {
   props: {},
   components: {
     NumberInputSpinner,
+  },
+  mounted() {
+    this.title = "エダマメの種 スターターセット";
+    this.unitPrice = 3000;
+    this.thumbnail =
+      "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog01.jpg";
   },
   created() {
     currentImageUrl = this.images[0];
@@ -54,7 +60,10 @@ export default {
         },
       ],
       currentImageIndex: 0,
-      yourVModel: 0,
+      number: 0,
+      title: "",
+      thumbnail: "",
+      unitPrice: 0,
     };
   },
 
@@ -68,11 +77,20 @@ export default {
       this.currentImageIndex = index;
     },
     goToCart() {
+      //storeに導入
+      //商品の単価と商品数
+      var items = [
+        {
+          title: this.title,
+          thumbnail: this.thumbnail,
+          num: this.number,
+          unitPrice: this.unitPrice,
+          sum: this.number * this.unitPrice,
+        },
+      ];
+      this.$store.commit("setCartList", items);
       this.$router.push({
         name: "CartView",
-        params: {
-          num: this.yourVModel,
-        },
       });
     },
   },

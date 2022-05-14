@@ -53,51 +53,10 @@ export default {
       { text: "数量", value: "num", sortable: false },
       { text: "合計", value: "sum", sortable: false },
     ],
-    items: [
-      {
-        title: "Star Wars: A new Hope",
-        thumbnail:
-          "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
-        num: 1,
-        unitPrice: 3000,
-        sum: 3000,
-      },
-      {
-        title: "Star Wars: The Empire Strike back",
-        thumbnail:
-          "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
-        num: 2,
-        unitPrice: 3000,
-        sum: 6000,
-      },
-      {
-        title: "Star Wars: The Return of Jedi",
-        thumbnail:
-          "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
-        num: 3,
-        unitPrice: 3000,
-        sum: 9000,
-      },
-      {
-        title: "Star Wars: The Phanton Menace",
-        thumbnail:
-          "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
-        num: 1,
-        unitPrice: 3000,
-        sum: 3000,
-      },
-      {
-        title: "Star Wars: Attack of the Clones",
-        thumbnail:
-          "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
-        num: 2,
-        unitPrice: 6000,
-        sum: 12000,
-      },
-    ],
-    lazy: `https://goo.gl/jbJWmK`,
   }),
-  created() {},
+  created() {
+    this.items = this.$store.state.cartList;
+  },
   computed: {},
   mounted: {},
   methods: {
@@ -109,7 +68,6 @@ export default {
       return `${month}/${day}/${year}`;
     },
     getdata(index) {
-      console.log(this.items[index].num);
       if (this.items[index].num == 0) {
         this.items.splice(index, 1);
       }

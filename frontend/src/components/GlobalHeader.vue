@@ -3,26 +3,12 @@
     <header class="header" :class="{ sticky: position > 0 }" :color="bg">
       <v-spacer></v-spacer>
       <v-row no-gutters>
-        <v-col
-          ><router-link to="/about" target="_blank"> ABOUT </router-link></v-col
-        >
-        <v-col>
-          <router-link to="/demo" target="_blank">CONCEPT</router-link></v-col
-        >
-        <v-col
-          ><router-link to="/demo" target="_blank"> ITEMS</router-link></v-col
-        >
-        <v-col>
-          <router-link to="/login" target="_blank"> LOGIN</router-link></v-col
-        >
-        <v-col>
-          <router-link to="/contact" target="_blank">
-            CONTACT</router-link
-          ></v-col
-        >
-        <v-col>
-          <router-link to="/cart" target="_blank"> CART</router-link></v-col
-        >
+        <v-col><router-link to="/about"> ABOUT </router-link></v-col>
+        <v-col> <router-link to="/demo">CONCEPT</router-link></v-col>
+        <v-col><router-link to="/demo"> ITEMS</router-link></v-col>
+        <v-col> <router-link to="/login"> LOGIN</router-link></v-col>
+        <v-col> <router-link to="/contact"> CONTACT</router-link></v-col>
+        <v-col> <router-link to="/cart"> CART</router-link></v-col>
       </v-row>
     </header>
     <v-img class="banner" src="@/assets/seedlings-4933589_1280.jpeg"></v-img>
