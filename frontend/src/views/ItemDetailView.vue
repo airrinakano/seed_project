@@ -39,6 +39,7 @@ export default {
     this.unitPrice = 3000;
     this.thumbnail =
       "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog01.jpg";
+    this.id = 1;
   },
   created() {
     currentImageUrl = this.images[0];
@@ -64,6 +65,7 @@ export default {
       title: "",
       thumbnail: "",
       unitPrice: 0,
+      id: 0,
     };
   },
 
@@ -79,15 +81,14 @@ export default {
     goToCart() {
       //storeに導入
       //商品の単価と商品数
-      var items = [
-        {
-          title: this.title,
-          thumbnail: this.thumbnail,
-          num: this.number,
-          unitPrice: this.unitPrice,
-          sum: this.number * this.unitPrice,
-        },
-      ];
+      var items = {
+        id: this.id,
+        title: this.title,
+        thumbnail: this.thumbnail,
+        num: this.number,
+        unitPrice: this.unitPrice,
+        sum: this.number * this.unitPrice,
+      };
       this.$store.commit("setCartList", items);
       this.$router.push({
         name: "CartView",

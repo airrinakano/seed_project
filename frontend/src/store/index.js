@@ -10,7 +10,7 @@ export default new Vuex.Store({
   getters: {},
   mutations: {
     setCartList(state, response) {
-      state.cartList = response;
+      state.cartList.push(response);
     },
     destroyCartList(state) {
       state.cartList = [];

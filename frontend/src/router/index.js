@@ -5,6 +5,7 @@ import AboutView from "../views/AboutView.vue";
 import LoginView from "../views/LoginView.vue";
 import CartView from "../views/CartView.vue";
 import ItemDetail from "../views/ItemDetailView.vue";
+import ItemView from "../views/ItemView.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/itemDetail",
     name: "ItemDetail",
     component: ItemDetail,
+  },
+  {
+    path: "/item",
+    name: "ItemView",
+    component: ItemView,
   },
 ];
 
