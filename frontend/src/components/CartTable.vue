@@ -19,6 +19,15 @@
         class="ma-0 pa-0"
       ></v-img>
     </template>
+    <template v-slot:[`item.num`]="{ item, index }">
+      <v-text-field
+        v-model="item.num"
+        name="quantity"
+        outlined
+        @input="getdata(index)"
+        type="number"
+      ></v-text-field>
+    </template>
   </v-data-table>
 </template>
 
@@ -36,7 +45,7 @@ export default {
         width: "30%",
       },
       {
-        text: "Title",
+        text: "",
         value: "title",
         align: "left",
         sortable: false,
@@ -50,6 +59,7 @@ export default {
         thumbnail:
           "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
         num: 1,
+        unitPrice: 3000,
         sum: 3000,
       },
       {
@@ -57,20 +67,23 @@ export default {
         thumbnail:
           "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
         num: 2,
-        sum: 3000,
+        unitPrice: 3000,
+        sum: 6000,
       },
       {
         title: "Star Wars: The Return of Jedi",
         thumbnail:
           "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
         num: 3,
-        sum: 3000,
+        unitPrice: 3000,
+        sum: 9000,
       },
       {
         title: "Star Wars: The Phanton Menace",
         thumbnail:
           "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
         num: 1,
+        unitPrice: 3000,
         sum: 3000,
       },
       {
@@ -78,7 +91,8 @@ export default {
         thumbnail:
           "https://cdn.pixabay.com/photo/2021/09/22/05/06/city-6645646_960_720.jpg",
         num: 2,
-        sum: 73000,
+        unitPrice: 6000,
+        sum: 12000,
       },
     ],
     lazy: `https://goo.gl/jbJWmK`,
@@ -93,6 +107,14 @@ export default {
       const month = `${date.getUTCMonth() + 1}`.padStart(2, "0");
       const year = date.getFullYear();
       return `${month}/${day}/${year}`;
+    },
+    getdata(index) {
+      console.log(this.items[index].num);
+      if (this.items[index].num == 0) {
+        this.items.splice(index, 1);
+      }
+      this.items[index].sum =
+        this.items[index].unitPrice * this.items[index].num;
     },
   },
   watch: {},
