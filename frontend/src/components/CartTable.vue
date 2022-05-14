@@ -1,34 +1,38 @@
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="items"
-    :total-items="items.length"
-    rows-per-page-items="5"
-    hide-action
-    item-key="title"
-  >
-    <!-- サムネイル -->
-    <template v-slot:[`item.thumbnail`]="{ item }">
-      <v-img
-        :src="item.thumbnail"
-        :aspect-ratop="16 / 9"
-        height="9vw"
-        min-height="100px"
-        width="16vw"
-        min-width="160px"
-        class="ma-0 pa-0"
-      ></v-img>
-    </template>
-    <template v-slot:[`item.num`]="{ item, index }">
-      <v-text-field
-        v-model="item.num"
-        name="quantity"
-        outlined
-        @input="getdata(index)"
-        type="number"
-      ></v-text-field>
-    </template>
-  </v-data-table>
+  <v-container>
+    <p v-show="items.length === 0">カートに商品はありません</p>
+    <v-data-table
+      v-show="items.length !== 0"
+      :headers="headers"
+      :items="items"
+      :total-items="items.length"
+      rows-per-page-items="5"
+      hide-action
+      item-key="title"
+    >
+      <!-- サムネイル -->
+      <template v-slot:[`item.thumbnail`]="{ item }">
+        <v-img
+          :src="item.thumbnail"
+          :aspect-ratop="16 / 9"
+          height="9vw"
+          min-height="100px"
+          width="16vw"
+          min-width="160px"
+          class="ma-0 pa-0"
+        ></v-img>
+      </template>
+      <template v-slot:[`item.num`]="{ item, index }">
+        <v-text-field
+          v-model="item.num"
+          name="quantity"
+          outlined
+          @input="getdata(index)"
+          type="number"
+        ></v-text-field>
+      </template>
+    </v-data-table>
+  </v-container>
 </template>
 
 <script>
