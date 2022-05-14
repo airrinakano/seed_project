@@ -1,6 +1,6 @@
 <template>
-  <div class="header-container">
-    <header class="header">
+  <div>
+    <header class="header" :class="{ sticky: position > 0 }" :color="bg">
       <v-spacer></v-spacer>
       <v-row no-gutters>
         <v-col><router-link to="/about"> ABOUT </router-link></v-col>
@@ -11,10 +11,10 @@
         <v-col> <router-link to="/cart"> CART</router-link></v-col>
       </v-row>
     </header>
-    <!-- <v-img class="banner" src="@/assets/seedlings-4933589_1280.jpeg"></v-img>
+    <v-img class="banner" src="@/assets/seedlings-4933589_1280.jpeg"></v-img>
     <div class="scrolldown1"><span>Scroll</span></div>
-    <div class="sub-title"> -->
-    <!-- <h1>すべての命は種から始まる</h1>
+    <div class="sub-title">
+      <h1>すべての命は種から始まる</h1>
       <p>
         種をつけるのは、植物として当たり前の生命活動。<br />
         種は、植物自身が命のリレーをしてつないできたものです。<br />
@@ -23,44 +23,74 @@
         農家は一番元気で子孫を残していくのに相応しい野菜を選び、<br />
         その土地と環境、そして自分の栽培方法に合った品種を育てて行きます。<br />
         自家採種を何度も繰り返すうちに個性のある品種が生まれてきます。<br />
-      </p> -->
-    <!-- </div> -->
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "GlobalHeader",
+  name: "Landing",
   props: {
     msg: String,
   },
-  methods: {},
+  methods: {
+    changeColor() {
+      if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+      ) {
+        this.bg = "transparent";
+      } else {
+        this.bg = "background: rgba(0,0,0,.4);";
+      }
+    },
+  },
   data: () => ({ bg: "" }),
   computed: {},
   mounted() {
-    // document.onscroll = (e) => {
-    //   this.position =
-    //     document.documentElement.scrollTop || document.body.scrollTop;
-    // };
+    window.onscroll = () => {
+      this.changeColor();
+    };
+    document.onscroll = (e) => {
+      this.position =
+        document.documentElement.scrollTop || document.body.scrollTop;
+    };
   },
 };
 </script>
 
 <style scoped>
+.banner {
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+p {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 2em;
+  font-family: \6e38\30b4\30b7\30c3\30af\4f53, YuGothic,
+    \6e38\30b4\30b7\30c3\30af Medium, Yu Gothic Medium,
+    \6e38\30b4\30b7\30c3\30af, Yu Gothic, sans-serif;
+}
+h1 {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-family: \6e38\30b4\30b7\30c3\30af\4f53, YuGothic,
+    \6e38\30b4\30b7\30c3\30af Medium, Yu Gothic Medium,
+    \6e38\30b4\30b7\30c3\30af, Yu Gothic, sans-serif;
+}
 header {
   z-index: 100000;
-
   text-align: center;
   position: fixed;
-  top: 0;
   width: 100%;
   color: #888;
   background: white;
   height: 1rem;
   transition: all 0.3s ease;
-}
-.header-container {
-  background: rgba(0, 0, 0, 0.4);
 }
 .sticky {
   background: rgba(0, 0, 0, 0.4);

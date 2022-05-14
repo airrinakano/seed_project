@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <global-header></global-header>
+    <global-header v-if="!isLanding"></global-header>
+    <landing v-if="isLanding"></landing>
     <router-view />
     <global-footer />
   </div>
@@ -8,12 +9,18 @@
 
 <script>
 import GlobalHeader from "@/components/GlobalHeader.vue";
+import Landing from "@/components/Landing.vue";
 import GlobalFooter from "@//components/GlobalFooter.vue";
 
 export default {
   name: "App",
-  components: { GlobalHeader, GlobalFooter },
+  components: { GlobalHeader, GlobalFooter, Landing },
   data: () => ({}),
+  computed: {
+    isLanding: function () {
+      return this.$route.name == "AboutView";
+    },
+  },
 };
 </script>
 
