@@ -6,6 +6,13 @@ module.exports = defineConfig({
     watch: true,
   },
   devServer: {
-    port: 8082,
+    port: 8081,
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080",
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
 });
