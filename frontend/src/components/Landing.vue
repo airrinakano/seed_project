@@ -4,7 +4,7 @@
       <v-spacer></v-spacer>
       <v-row no-gutters>
         <v-col><router-link to="/about"> ABOUT </router-link></v-col>
-        <v-col> <router-link to="/demo">CONCEPT</router-link></v-col>
+        <v-col> <router-link to="/concept">CONCEPT</router-link></v-col>
         <v-col><router-link to="/item"> ITEMS</router-link></v-col>
         <v-col> <router-link to="/login"> LOGIN</router-link></v-col>
         <v-col> <router-link to="/contact"> CONTACT</router-link></v-col>
