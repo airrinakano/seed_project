@@ -102,6 +102,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   display: flex;
+  margin-top: 70px;
 }
 .item-image {
   flex-grow: 1;
