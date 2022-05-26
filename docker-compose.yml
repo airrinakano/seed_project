@@ -13,8 +13,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./mysql/initdb:/docker-entrypoint-initdb.d
-      - mysql_db:/var/lib/mysql
+      - ./docker/mysql/initdb:/docker-entrypoint-initdb.d
     user: root # 一旦rootで入る
 #   backend:
 #     container_name: backend

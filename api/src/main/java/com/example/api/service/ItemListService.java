@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class ItemListService {
-
+    
     public List<ItemDto> getRecentryHistory(String userId, Integer companyId) {
 
             return new ArrayList<ItemDto>();
