@@ -27,8 +27,7 @@ CREATE TABLE IF NOT EXISTS m_product(
 -- MEMBER
 -- -----------------------------
 CREATE TABLE IF NOT EXISTS m_member(
-  -- EC-CUBEでの型等確認
-  member_id VARCHAR(20) NOT NULL COMMENT '会員ID',
+  member_id INTEGER NOT NULL AUTO_INCREMENT NOT NULL COMMENT '会員ID',
   first_name VARCHAR(30) NOT NULL COMMENT '名',
   last_name VARCHAR(30) NOT NULL COMMENT '姓',
   pass_word VARCHAR(30) NOT NULL COMMENT 'パスワード',
@@ -39,7 +38,6 @@ CREATE TABLE IF NOT EXISTS m_member(
   updated_by VARCHAR(20) NOT NULL COMMENT '最終更新者',
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最終更新日時',
   delete_flag boolean NOT NULL DEFAULT false COMMENT '終了・無効フラグ',
-  display_system_maintenance_notice_flag boolean NOT NULL DEFAULT true COMMENT 'システムメンテナンス通知表示フラグ',
   INDEX(created_by),
   INDEX(created_at),
   INDEX(updated_by),
@@ -54,7 +52,7 @@ CREATE TABLE IF NOT EXISTS m_member(
 CREATE TABLE IF NOT EXISTS t_order_info (
   -- 主キー
   order_id VARCHAR(19) NOT NULL COMMENT 'orderID',
-  member_id VARCHAR (20) NOT NULL COMMENT '購入者ID',
+  member_id INTEGER NOT NULL COMMENT '購入者ID',
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時',
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最終更新日時',
   updated_by VARCHAR(20) NOT NULL COMMENT '最終更新者',
