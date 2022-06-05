@@ -66,11 +66,9 @@
 <script>
 import messageMixin from "@/mixins/messageMixins.js";
 export default {
+  /* eslint-disable */
   name: "Login",
-  props: {
-    SSOloginFailed: false,
-    isServerError: false,
-  },
+
   data: () => ({
     /**
      * ログインに失敗したかどうかの判定フラグ
@@ -113,8 +111,6 @@ export default {
      * @type {String}
      */
     passwordInputed: "",
-    isPasswordDisplayed: false,
-    loading: false,
     authLoading: false,
     companyIdLoading: false,
     isApproverLoading: false,

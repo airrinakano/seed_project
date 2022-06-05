@@ -45,6 +45,7 @@
 
 <script>
 export default {
+  /* eslint-disable */
   name: "Item",
   props: {},
   methods: {

@@ -9,6 +9,7 @@
 import HomeLanding from "../components/HomeLanding.vue";
 
 export default {
+  /* eslint-disable */
   name: "Home",
 
   components: {

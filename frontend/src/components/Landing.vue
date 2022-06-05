@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  /* eslint-disable */
   name: "Landing",
   props: {
     msg: String,
@@ -52,7 +53,7 @@ export default {
     window.onscroll = () => {
       this.changeColor();
     };
-    document.onscroll = (e) => {
+    document.onscroll = () => {
       this.position =
         document.documentElement.scrollTop || document.body.scrollTop;
     };

@@ -42,22 +42,19 @@ export default {
     this.id = 1;
   },
   created() {
-    currentImageUrl = this.images[0];
+    this.currentImageUrl = this.images[0];
   },
   data() {
     return {
       images: [
         {
-          src:
-            "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog01.jpg",
+          src: "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog01.jpg",
         },
         {
-          src:
-            "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog02.jpg",
+          src: "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog02.jpg",
         },
         {
-          src:
-            "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog03.jpg",
+          src: "https://junpei-sugiyama.com/wp-content/uploads/2021/01/dog03.jpg",
         },
       ],
       currentImageIndex: 0,

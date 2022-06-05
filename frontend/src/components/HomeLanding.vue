@@ -61,7 +61,7 @@ export default {
       this.changeColor();
       this.eStandImgPass = eStandImgPass;
     };
-    document.onscroll = (e) => {
+    document.onscroll = () => {
       this.position =
         document.documentElement.scrollTop || document.body.scrollTop;
     };
