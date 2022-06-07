@@ -15,15 +15,15 @@ public interface MMemberMapper {
         "insert into m_member (member_id, first_name, ",
         "last_name, pass_word, ",
         "init_email, address_name, ",
-        "created_by, created_at, ",
-        "updated_by, updated_at, ",
-        "delete_flag, display_system_maintenance_notice_flag)",
-        "values (#{memberId,jdbcType=VARCHAR}, #{firstName,jdbcType=VARCHAR}, ",
+        "admin_flag, created_by, ",
+        "created_at, updated_by, ",
+        "updated_at, delete_flag)",
+        "values (#{memberId,jdbcType=INTEGER}, #{firstName,jdbcType=VARCHAR}, ",
         "#{lastName,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR}, ",
         "#{initEmail,jdbcType=VARCHAR}, #{addressName,jdbcType=VARCHAR}, ",
-        "#{createdBy,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, ",
-        "#{updatedBy,jdbcType=VARCHAR}, #{updatedAt,jdbcType=TIMESTAMP}, ",
-        "#{deleteFlag,jdbcType=BIT}, #{displaySystemMaintenanceNoticeFlag,jdbcType=BIT})"
+        "#{adminFlag,jdbcType=BIT}, #{createdBy,jdbcType=VARCHAR}, ",
+        "#{createdAt,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=VARCHAR}, ",
+        "#{updatedAt,jdbcType=TIMESTAMP}, #{deleteFlag,jdbcType=BIT})"
     })
     int insert(MMember record);
 
@@ -33,13 +33,13 @@ public interface MMemberMapper {
 
     @Select({
         "select",
-        "member_id, first_name, last_name, pass_word, init_email, address_name, created_by, ",
-        "created_at, updated_by, updated_at, delete_flag, display_system_maintenance_notice_flag",
+        "member_id, first_name, last_name, pass_word, init_email, address_name, admin_flag, ",
+        "created_by, created_at, updated_by, updated_at, delete_flag",
         "from m_member",
-        "where member_id = #{memberId,jdbcType=VARCHAR}"
+        "where member_id = #{memberId,jdbcType=INTEGER}"
     })
     @ResultMap("com.example.api.mapper.MMemberMapper.BaseResultMap")
-    MMember selectByPrimaryKey(String memberId);
+    MMember selectByPrimaryKey(Integer memberId);
 
     int updateByPrimaryKeySelective(MMember record);
 
@@ -50,13 +50,13 @@ public interface MMemberMapper {
           "pass_word = #{passWord,jdbcType=VARCHAR},",
           "init_email = #{initEmail,jdbcType=VARCHAR},",
           "address_name = #{addressName,jdbcType=VARCHAR},",
+          "admin_flag = #{adminFlag,jdbcType=BIT},",
           "created_by = #{createdBy,jdbcType=VARCHAR},",
           "created_at = #{createdAt,jdbcType=TIMESTAMP},",
           "updated_by = #{updatedBy,jdbcType=VARCHAR},",
           "updated_at = #{updatedAt,jdbcType=TIMESTAMP},",
-          "delete_flag = #{deleteFlag,jdbcType=BIT},",
-          "display_system_maintenance_notice_flag = #{displaySystemMaintenanceNoticeFlag,jdbcType=BIT}",
-        "where member_id = #{memberId,jdbcType=VARCHAR}"
+          "delete_flag = #{deleteFlag,jdbcType=BIT}",
+        "where member_id = #{memberId,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(MMember record);
 }

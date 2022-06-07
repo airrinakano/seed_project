@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class MMember implements Serializable {
-    private String memberId;
+    private Integer memberId;
 
     private String firstName;
 
@@ -22,6 +22,8 @@ public class MMember implements Serializable {
 
     private String addressName;
 
+    private Boolean adminFlag;
+
     private String createdBy;
 
     private LocalDateTime createdAt;
@@ -31,8 +33,6 @@ public class MMember implements Serializable {
     private LocalDateTime updatedAt;
 
     private Boolean deleteFlag;
-
-    private Boolean displaySystemMaintenanceNoticeFlag;
 
     private static final long serialVersionUID = 1L;
 }

@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     cartList: [],
+    csrf: "",
   },
   getters: {},
   mutations: {
@@ -14,6 +15,12 @@ export default new Vuex.Store({
     },
     destroyCartList(state) {
       state.cartList = [];
+    },
+    setCsrf(state, response) {
+      state.csrf = response;
+    },
+    destroyCsrf(state) {
+      state.csrf = "";
     },
   },
   actions: {},

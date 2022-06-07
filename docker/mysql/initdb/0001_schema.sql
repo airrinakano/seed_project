@@ -30,9 +30,10 @@ CREATE TABLE IF NOT EXISTS m_member(
   member_id INTEGER NOT NULL AUTO_INCREMENT NOT NULL COMMENT '会員ID',
   first_name VARCHAR(30) NOT NULL COMMENT '名',
   last_name VARCHAR(30) NOT NULL COMMENT '姓',
-  pass_word VARCHAR(30) NOT NULL COMMENT 'パスワード',
+  pass_word VARCHAR(255) NOT NULL COMMENT 'パスワード',
   init_email VARCHAR(65) NOT NULL COMMENT '登録時メールアドレス',
   address_name VARCHAR(65) COMMENT '住所',
+  admin_flag boolean NOT NULL DEFAULT false COMMENT '管理者権限フラグ',
   created_by VARCHAR(20) NOT NULL COMMENT '作成者',
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時',
   updated_by VARCHAR(20) NOT NULL COMMENT '最終更新者',
@@ -44,7 +45,9 @@ CREATE TABLE IF NOT EXISTS m_member(
   INDEX(updated_at),
   INDEX(delete_flag),
   PRIMARY KEY (member_id)
-);
+)ENGINE = INNODB,
+CHARACTER SET = utf8mb4,
+COLLATE utf8mb4_general_ci;
 
 -- -----------------------------
 -- ORDER INFO

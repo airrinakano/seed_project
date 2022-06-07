@@ -189,12 +189,22 @@ export default {
       this.loading = true;
       this.alertMessage = "";
       this.loginFailed = false;
+
+      await this.axios
+        .get("/api/prelogin")
+        .then(async (response) => {
+          this.$store.commit("setCsrf", response.data);
+        })
+        .catch((e) => {})
+        .finally(() => {
+          this.loading = false;
+        });
       const loginParam = {
         email: this.idInputed,
-        password: this.passwordInputed,
+        pass: this.passwordInputed,
+        _csrf: this.$store.state.csrf,
       };
       console.log(loginParam);
-
       await this.axios
         .post("/api/login", loginParam)
         .then(async (response) => {

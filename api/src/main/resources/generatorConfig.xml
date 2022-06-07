@@ -33,7 +33,7 @@
         </commentGenerator>
 
         <!-- 生成元となるDBへの接続情報 -->
-        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/mysqldb"
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/mysqldb?sslMode=DISABLED"
                         driverClass="com.mysql.cj.jdbc.Driver"
                         password="password" userId="user"/>
 

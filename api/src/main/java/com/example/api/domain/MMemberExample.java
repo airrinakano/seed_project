@@ -115,62 +115,52 @@ public class MMemberExample {
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdEqualTo(String value) {
+        public Criteria andMemberIdEqualTo(Integer value) {
             addCriterion("member_id =", value, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdNotEqualTo(String value) {
+        public Criteria andMemberIdNotEqualTo(Integer value) {
             addCriterion("member_id <>", value, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdGreaterThan(String value) {
+        public Criteria andMemberIdGreaterThan(Integer value) {
             addCriterion("member_id >", value, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdGreaterThanOrEqualTo(String value) {
+        public Criteria andMemberIdGreaterThanOrEqualTo(Integer value) {
             addCriterion("member_id >=", value, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdLessThan(String value) {
+        public Criteria andMemberIdLessThan(Integer value) {
             addCriterion("member_id <", value, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdLessThanOrEqualTo(String value) {
+        public Criteria andMemberIdLessThanOrEqualTo(Integer value) {
             addCriterion("member_id <=", value, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdLike(String value) {
-            addCriterion("member_id like", value, "memberId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMemberIdNotLike(String value) {
-            addCriterion("member_id not like", value, "memberId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMemberIdIn(List<String> values) {
+        public Criteria andMemberIdIn(List<Integer> values) {
             addCriterion("member_id in", values, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdNotIn(List<String> values) {
+        public Criteria andMemberIdNotIn(List<Integer> values) {
             addCriterion("member_id not in", values, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdBetween(String value1, String value2) {
+        public Criteria andMemberIdBetween(Integer value1, Integer value2) {
             addCriterion("member_id between", value1, value2, "memberId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberIdNotBetween(String value1, String value2) {
+        public Criteria andMemberIdNotBetween(Integer value1, Integer value2) {
             addCriterion("member_id not between", value1, value2, "memberId");
             return (Criteria) this;
         }
@@ -525,6 +515,66 @@ public class MMemberExample {
             return (Criteria) this;
         }
 
+        public Criteria andAdminFlagIsNull() {
+            addCriterion("admin_flag is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagIsNotNull() {
+            addCriterion("admin_flag is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagEqualTo(Boolean value) {
+            addCriterion("admin_flag =", value, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagNotEqualTo(Boolean value) {
+            addCriterion("admin_flag <>", value, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagGreaterThan(Boolean value) {
+            addCriterion("admin_flag >", value, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("admin_flag >=", value, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagLessThan(Boolean value) {
+            addCriterion("admin_flag <", value, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagLessThanOrEqualTo(Boolean value) {
+            addCriterion("admin_flag <=", value, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagIn(List<Boolean> values) {
+            addCriterion("admin_flag in", values, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagNotIn(List<Boolean> values) {
+            addCriterion("admin_flag not in", values, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagBetween(Boolean value1, Boolean value2) {
+            addCriterion("admin_flag between", value1, value2, "adminFlag");
+            return (Criteria) this;
+        }
+
+        public Criteria andAdminFlagNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("admin_flag not between", value1, value2, "adminFlag");
+            return (Criteria) this;
+        }
+
         public Criteria andCreatedByIsNull() {
             addCriterion("created_by is null");
             return (Criteria) this;
@@ -842,66 +892,6 @@ public class MMemberExample {
 
         public Criteria andDeleteFlagNotBetween(Boolean value1, Boolean value2) {
             addCriterion("delete_flag not between", value1, value2, "deleteFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagIsNull() {
-            addCriterion("display_system_maintenance_notice_flag is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagIsNotNull() {
-            addCriterion("display_system_maintenance_notice_flag is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagEqualTo(Boolean value) {
-            addCriterion("display_system_maintenance_notice_flag =", value, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagNotEqualTo(Boolean value) {
-            addCriterion("display_system_maintenance_notice_flag <>", value, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagGreaterThan(Boolean value) {
-            addCriterion("display_system_maintenance_notice_flag >", value, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("display_system_maintenance_notice_flag >=", value, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagLessThan(Boolean value) {
-            addCriterion("display_system_maintenance_notice_flag <", value, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagLessThanOrEqualTo(Boolean value) {
-            addCriterion("display_system_maintenance_notice_flag <=", value, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagIn(List<Boolean> values) {
-            addCriterion("display_system_maintenance_notice_flag in", values, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagNotIn(List<Boolean> values) {
-            addCriterion("display_system_maintenance_notice_flag not in", values, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagBetween(Boolean value1, Boolean value2) {
-            addCriterion("display_system_maintenance_notice_flag between", value1, value2, "displaySystemMaintenanceNoticeFlag");
-            return (Criteria) this;
-        }
-
-        public Criteria andDisplaySystemMaintenanceNoticeFlagNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("display_system_maintenance_notice_flag not between", value1, value2, "displaySystemMaintenanceNoticeFlag");
             return (Criteria) this;
         }
     }
