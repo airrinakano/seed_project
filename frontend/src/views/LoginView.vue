@@ -1,5 +1,13 @@
 <template>
   <v-container>
+    <v-alert
+      type="error"
+      color="red"
+      v-if="loginFailed || loginEmailFailed"
+      class="error-massage"
+    >
+      {{ alertMessage }}
+    </v-alert>
     <div class="main-content-area white-background">
       <v-row>
         <v-col>
@@ -199,16 +207,18 @@ export default {
         .finally(() => {
           this.loading = false;
         });
-      const loginParam = {
-        email: this.idInputed,
-        pass: this.passwordInputed,
-        _csrf: this.$store.state.csrf,
-      };
-      console.log(loginParam);
+
+      var params = new URLSearchParams();
+      params.append("email", this.idInputed);
+      params.append("pass", this.passwordInputed);
+      params.append("_csrf", this.$store.state.csrf);
+
       await this.axios
-        .post("/api/login", loginParam)
+        .post("/api/login", params)
         .then(async (response) => {
-          console.log("入った");
+          this.$router.push({
+            name: "AboutView",
+          });
         })
         .catch((e) => {})
         .finally(() => {
