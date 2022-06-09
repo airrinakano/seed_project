@@ -7,6 +7,10 @@ export default new Vuex.Store({
   state: {
     cartList: [],
     csrf: "",
+    login: {
+      userId: "",
+      userName: "",
+    },
   },
   getters: {},
   mutations: {
@@ -21,6 +25,15 @@ export default new Vuex.Store({
     },
     destroyCsrf(state) {
       state.csrf = "";
+    },
+    setLogin(state, response) {
+      state.userId = response.userId;
+      state.userName = response.userName;
+    },
+    destroyLogin(state) {
+      state.csrf = "";
+      state.userId = "";
+      state.userName = "";
     },
   },
   actions: {},
