@@ -7,14 +7,8 @@
         <v-col> <router-link to="/demo">CONCEPT</router-link></v-col>
         <v-col><router-link to="/item"> ITEMS</router-link></v-col>
         <v-col> <router-link to="/login"> LOGIN</router-link></v-col>
-        <v-col>
-          <router-link to="/contact">
-            CONTACT<v-icon large
-              >mdi-credit-card-contactless</v-icon
-            ></router-link
-          ></v-col
-        >
         <v-col> <router-link to="/cart"> CART</router-link></v-col>
+        <v-col> <router-link to="/login"> LOGOUT</router-link></v-col>
       </v-row>
     </header>
   </div>

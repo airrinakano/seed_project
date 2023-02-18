@@ -2,7 +2,7 @@
   <div id="app">
     <global-header v-if="!isLanding"></global-header>
     <landing v-if="isLanding"></landing>
-    <router-view />
+    <router-view class="main-contain" />
     <global-footer />
   </div>
 </template>
@@ -32,5 +32,8 @@ export default {
 }
 .v-application--wrap {
   min-height: unset;
+}
+.main-contain {
+  margin-top: 10rem;
 }
 </style>

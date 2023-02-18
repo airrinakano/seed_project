@@ -7,8 +7,8 @@
         <v-col> <router-link to="/concept">CONCEPT</router-link></v-col>
         <v-col><router-link to="/item"> ITEMS</router-link></v-col>
         <v-col> <router-link to="/login"> LOGIN</router-link></v-col>
-        <v-col> <router-link to="/contact"> CONTACT</router-link></v-col>
         <v-col> <router-link to="/cart"> CART</router-link></v-col>
+        <v-col> <router-link to="/login"> LOGOUT</router-link></v-col>
       </v-row>
     </header>
     <v-img class="banner" src="@/assets/seedlings-4933589_1280.jpeg"></v-img>

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import LoginView from "../views/LoginView.vue";
+import SignUp from "../views/SignUp.vue";
 import CartView from "../views/CartView.vue";
 import ItemDetail from "../views/ItemDetailView.vue";
 import ItemView from "../views/ItemView.vue";
@@ -27,6 +28,11 @@ const router = new VueRouter({
       path: "/login",
       name: "LoginView",
       component: LoginView,
+    },
+    {
+      path: "/signup",
+      name: "SignUp",
+      component: SignUp,
     },
     {
       path: "/cart",

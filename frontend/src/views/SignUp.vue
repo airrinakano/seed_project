@@ -15,12 +15,32 @@
             <v-card class="login-card mx-auto" max-width="30rem">
               <v-card-text class="black-text">
                 <div>
-                  <p class="inline-block">ログインID</p>
+                  <p class="inline-block">姓</p>
+                </div>
+                <v-text-field
+                  v-model="surname"
+                  background-color="selectbox"
+                  placeholder="名前を入力してください"
+                  :error="loginEmailFailed"
+                  outlined
+                ></v-text-field>
+                <div>
+                  <p class="inline-block">名</p>
+                </div>
+                <v-text-field
+                  v-model="firstName"
+                  background-color="selectbox"
+                  placeholder="名前を入力してください"
+                  :error="loginEmailFailed"
+                  outlined
+                ></v-text-field>
+                <div>
+                  <p class="inline-block">メールアドレス</p>
                 </div>
                 <v-text-field
                   v-model="idInputed"
                   background-color="selectbox"
-                  placeholder="メールアドレス"
+                  placeholder="メールアドレスを入力してください"
                   :error="loginEmailFailed"
                   outlined
                 ></v-text-field>
@@ -28,7 +48,7 @@
                 <v-text-field
                   v-model="passwordInputed"
                   background-color="selectbox"
-                  placeholder="パスワード"
+                  placeholder="半角英数字5字以上で入力してください"
                   :type="isPasswordDisplayed ? 'text' : 'password'"
                   outlined
                   hide-details
@@ -40,6 +60,22 @@
                   @click:append="isPasswordDisplayed = !isPasswordDisplayed"
                   @keydown.enter="login"
                 ></v-text-field>
+                <div>
+                  <p class="inline-block">生年月日</p>
+                </div>
+                <v-text-field
+                  v-model="firstName"
+                  background-color="selectbox"
+                  placeholder="名前を入力してください"
+                  :error="loginEmailFailed"
+                  outlined
+                ></v-text-field>
+                <v-radio-group v-model="row" row>
+                  <v-radio label="男" value="man"></v-radio>
+                  <v-radio label="女" value="women"></v-radio>
+                  <v-radio label="その他" value="others"></v-radio>
+                  <v-radio label="回答しない" value="unanswered"></v-radio>
+                </v-radio-group>
               </v-card-text>
               <v-card-actions>
                 <v-btn
@@ -51,23 +87,12 @@
                   depressed
                   :loading="loading"
                   @click="login"
-                  >ログイン</v-btn
+                >
+                  アカウントを作成する</v-btn
                 >
               </v-card-actions>
             </v-card>
           </v-form>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col class="text-center">
-          <span>
-            <a class="no-underline" :href="`/signup`">アカウント新規作成</a>
-          </span>
-          <span>
-            <a class="no-underline" :href="`${this.forgot}`"
-              >パスワードを忘れた方</a
-            >
-          </span>
         </v-col>
       </v-row>
     </div>

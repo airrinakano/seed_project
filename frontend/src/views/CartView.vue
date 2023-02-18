@@ -28,10 +28,6 @@ h2 {
   width: 200px;
 }
 
-.cart-container {
-  margin: 20px auto;
-}
-
 .cart-table {
   width: 700px;
 }
